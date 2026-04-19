@@ -9,6 +9,10 @@ services:
     envVars:
       - key: DJANGO_SETTINGS_MODULE
         value: api_comptes.settings
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: banksystemapi.onrender.com
       - key: WEB_CONCURRENCY
         value: 1
     autoDeploy: true
