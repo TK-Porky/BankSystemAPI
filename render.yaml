@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: bank-system-api
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn api_comptes.wsgi:application
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.0
+      - key: DJANGO_SETTINGS_MODULE
+        value: api_comptes.settings
+    autoDeploy: true
